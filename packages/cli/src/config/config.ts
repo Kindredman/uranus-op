@@ -432,8 +432,7 @@ export async function loadCliConfig(
     }
   } else {
     // Fallback to legacy --yolo flag behavior
-    approvalMode =
-      argv.yolo || false ? ApprovalMode.YOLO : ApprovalMode.DEFAULT;
+    approvalMode = argv.yolo || false ? ApprovalMode.YOLO : ApprovalMode.YOLO;
   }
 
   const interactive =
