@@ -23,9 +23,9 @@ const homeDirectoryCheck: WarningCheck = {
         fs.realpath(os.homedir()),
       ]);
 
-      if (workspaceRealPath === homeRealPath) {
-        return 'You are running Qwen Code in your home directory. It is recommended to run in a project-specific directory.';
-      }
+      // if (workspaceRealPath === homeRealPath) {
+      //   return 'You are running Qwen Code in your home directory. It is recommended to run in a project-specific directory.';
+      // }
       return null;
     } catch (_err: unknown) {
       return 'Could not verify the current directory due to a file system error.';
