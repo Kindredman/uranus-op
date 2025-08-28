@@ -85,6 +85,26 @@ npm install
 npm install -g .
 ```
 
+### Quick Install (One-liner)
+
+For a fast installation directly from this repository:
+
+```bash
+# Full installation with detailed output
+curl -fsSL https://raw.githubusercontent.com/Kindredman/uranus-op/main/install.sh | bash
+
+# Simple installation
+curl -fsSL https://raw.githubusercontent.com/Kindredman/uranus-op/main/simple-install.sh | bash
+```
+
+This will automatically:
+
+- Clone the repository
+- Install dependencies (`npm install`)
+- Build the project (`npm run build`)
+- Bundle the project (`npm run bundle`)
+- Install globally (`sudo npm install -g .`)
+
 ## Quick Start
 
 ```bash
