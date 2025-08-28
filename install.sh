@@ -79,7 +79,7 @@ clone_repository() {
     
     # Set repository URL and directory
     REPO_URL="https://github.com/Kindredman/uranus-op.git"
-    INSTALL_DIR="/tmp/uranus-op-install"
+    INSTALL_DIR="$HOME/.uranus-op"
     
     # Remove existing directory if it exists
     if [ -d "$INSTALL_DIR" ]; then
@@ -174,14 +174,10 @@ verify_installation() {
     fi
 }
 
-# Function to cleanup
+# Function to cleanup (no-op since we keep the installation directory)
 cleanup() {
-    print_status "Cleaning up temporary files..."
-    
-    if [ -d "/tmp/uranus-op-install" ]; then
-        rm -rf "/tmp/uranus-op-install"
-        print_success "Cleanup completed"
-    fi
+    print_status "Installation directory preserved at $INSTALL_DIR"
+    print_status "You can update uranus-op by running: cd $INSTALL_DIR && git pull && npm run build && npm install -g ."
 }
 
 # Main installation process
@@ -212,6 +208,8 @@ main() {
     echo "  1. Run 'uranus --version' to verify the installation"
     echo "  2. Run 'uranus' to start using the tool"
     echo "  3. Check the README at https://github.com/Kindredman/uranus-op for usage instructions"
+    echo "  4. Source code is preserved at: $HOME/.uranus-op"
+    echo "  5. To update: cd $HOME/.uranus-op && git pull && npm run build && npm install -g ."
     echo ""
 }
 
